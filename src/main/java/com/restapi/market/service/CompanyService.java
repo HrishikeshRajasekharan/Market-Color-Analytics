@@ -611,12 +611,12 @@ public class CompanyService  {
 		List<String> monthlabel = new ArrayList<>();
 		List<String> dayLabel = new ArrayList<>();
 		List<String> daylabel = new ArrayList<>();
-		List<Stock> stocknew = new ArrayList<>();
 		
 		List<Integer> weekLabel = new ArrayList<>();
 		List<Integer> weeklabel = new ArrayList<>();
 		
 		for (String ticker : tickerList) {
+			List<Stock> stocknew = new ArrayList<>();
 			List<Double>dev = new ArrayList<>();
 			ArrayList<Double> valueList = new ArrayList<>();
 
@@ -798,13 +798,14 @@ public class CompanyService  {
 		List<String> labels = new ArrayList<>();
 		List<String> dayLabel = new ArrayList<>();
 		List<String> daylabel = new ArrayList<>();
-		List<Stock> stocknew = new ArrayList<>();
+		
 		
 		List<Integer> weekLabel = new ArrayList<>();
 		List<Integer> weeklabel = new ArrayList<>();
 		
 
 		for (String sector : sectorList) {
+			List<Stock> stocknew = new ArrayList<>();
 			ArrayList<Double> valueList = new ArrayList<>();
 			List<Double>dev = new ArrayList<>();
 			List<Company> company = getBySector(sector);
@@ -1179,6 +1180,7 @@ public class CompanyService  {
 				}
 			}
 			List<String> newSector = new ArrayList<>(new HashSet<String>(sectorNew));
+			//System.out.println(newSector);
 			value1 = getDataCompany(tickerNew, startDate, endDate, type, group, boundaryDate);
 			value2 = getDataSector(newSector, startDate, endDate, type, group, boundaryDate);
 			List<ChartObject> obj1 = value1.getDatasets();
